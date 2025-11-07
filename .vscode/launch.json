@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Launch HMI",
+            "program": "${env:CRLROOT}/build/debug/tracer-hmi/src/tracer_hmi",
+            "cwd": "${env:CRLROOT}/build/debug/tracer-hmi/src",
+            "args": [
+                "10099",
+                "--comms-config",
+                "${env:CRLROOT}/install/debug/share/config/comms/comms_config.json",
+
+                "--interface",
+                "${env:DEFAULT_INTERFACE}",
+
+                "--certificate",
+                "${env:CRLROOT}/comms_config/certs/PLS22.crt",
+
+                "--private-key",
+                "${env:CRLROOT}/comms_config/certs/PLS22.key",
+
+                "--aes-key",
+                "${env:CRLROOT}/comms_config/keys/mcast.key",
+
+                "--ca-certificate",
+                "${env:CRLROOT}/comms_config/certs/ca_chain.crt"
+            ]
+        }
+    ]
+}
