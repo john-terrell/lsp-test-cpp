@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include(GNUInstallDirs)
 
-add_executable(lsp-test-cpp main.cpp)
+add_executable(lsp-test-cpp src/main.cpp)
 
 if(CMAKE_EXPORT_COMPILE_COMMANDS AND PROJECT_IS_TOP_LEVEL AND UNIX)
   # Create symlink to compile_commands.json for IDE to pick up (e.g. vim)
@@ -16,5 +16,6 @@ if(CMAKE_EXPORT_COMPILE_COMMANDS AND PROJECT_IS_TOP_LEVEL AND UNIX)
             ${CMAKE_CURRENT_SOURCE_DIR}/compile_commands.json
   )
 
-  set(CMAKE_CXX_STANDARD_INCLUDE_DIRECTORIES ${CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES})
+  set(CMAKE_CXX_STANDARD_INCLUDE_DIRECTORIES
+      ${CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES})
 endif()
