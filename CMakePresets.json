@@ -22,6 +22,7 @@
     {
       "name": "debug",
       "inherits": "base",
+      "binaryDir": "./build/debug",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
@@ -30,9 +31,20 @@
     {
       "name": "release",
       "inherits": "base",
+      "binaryDir": "./build/release",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release"
       }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "debug",
+      "configurePreset": "debug"
+    },
+    {
+      "name": "release",
+      "configurePreset": "release"
     }
   ]
 }
